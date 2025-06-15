@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rapid Python App Dev - README</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f9f9f9;
+      max-width: 800px;
+      margin: auto;
+    }
+    pre {
+      background-color: #eee;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    h1, h2, h3 {
+      color: #004aad;
+    }
+  </style>
+</head>
+<body>
+  <h1>README - Rapid Python App Dev</h1>
+  <div id="readme">Carregando conteúdo...</div>
+
+  <script>
+    fetch("https://raw.githubusercontent.com/valbersilva/wyden_rapid_python_application_development/master/README.md")
+      .then(response => response.text())
+      .then(text => {
+        document.getElementById("readme").innerHTML = marked.parse(text);
+      })
+      .catch(() => {
+        document.getElementById("readme").innerText = "Erro ao carregar o README.";
+      });
+  </script>
+</body>
+</html>
